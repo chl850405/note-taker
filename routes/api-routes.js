@@ -1,10 +1,11 @@
 //initiate router and fs
 const router = require("express").Router();
 const fs = require ("fs");
+const db = require ("../db/db.json")
 
 // render notes 
 router.get("/api/notes", function (req, res) {
-  return res.json("./db/db.json");
+  return res.json(db);
 });
 
 //create a new note
@@ -12,7 +13,7 @@ router.post("/api/notes", function (req, res) {
   const newNote = body;
   notesArray.push(newNote);
   fs.writeFileSync(
-    path.join(__dirname, './data/db.json'),
+    path.join(__dirname, 'db'),
     JSON.stringify({ db: notesArray }, null, 2)
   );
   return res.status(200).end();
@@ -27,12 +28,12 @@ router.delete("/api/notes/:id", function (req, res) {
     console.log(id);
 
     // Goes through notesArray searching for matching ID
-    for (i=0; i < "db/db.json".length; i++){
+    for (i=0; i < "db".length; i++){
       
-        if ("db/db.json"[i].id == id){
+        if ("db"[i].id == id){
             console.log("match!");
             // responds with deleted note
-            res.send("db/db.json"[i]);
+            res.send("db"[i]);
 
             // Removes the deleted note
             notesData.splice(i,1);
@@ -48,7 +49,7 @@ function rewriteNotes() {
    // Converts new JSON Array back to string
   notes = JSON.stringify(notes);
   console.log (notes);
-  fs.writeFile("db/db.json", JSON.stringify(notes), function (err) {
+  fs.writeFile("db", JSON.stringify(notes), function (err) {
       if (err) {
           console.log("error")
           return console.log(err);
