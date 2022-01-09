@@ -1,14 +1,15 @@
 const router = require("express").Router();
-const path = require("path")
 
 //reponds with notes using index.html
 router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/index.html'));
+  //. In Express 4.x this has been simplified and you wouldn't need to use 'path' module
+  res.sendFile('index.html', {root: 'public'});
 });
 
 //reponds with notes using notes.html
 router.get('/notes', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/notes.html'));
+  //. In Express 4.x this has been simplified and you wouldn't need to use 'path' module
+  res.sendFile('notes.html', {root: 'public'});
 });
 
 

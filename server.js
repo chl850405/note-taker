@@ -5,7 +5,7 @@ const apiRoutes = require("./routes/api-routes");
 //initialize html route
 const htmlRoutes = require("./routes/html-routes");
 
-// instantiate the server
+// inialize the server
 const app = express();
 //set portal
 const PORT = process.env.PORT || 3001;
