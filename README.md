@@ -12,10 +12,10 @@
 * [Questions](#questions)
 
 ## Installation 
-The user should clone the repository from GitHub. This application requires Server.js, Express.js, FS and Path. 
+The user should clone the repository from GitHub. This application requires Server.js, Express.js, FS and uuid. 
 
 ## Usage 
-This application will allow users to retrieve, write, delete and save notes.
+This application will allow users to retrieve, write notes.
 
 
 
