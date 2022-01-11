@@ -17,7 +17,11 @@ The user should clone the repository from GitHub. This application requires Serv
 ## Usage 
 This application will allow users to retrieve, write notes.
 
+![the mockup](./public/assets/img/demo.png)#Note-Taker
 
+Deployed URL using Heroku
+
+https://n0t3-t4k3r.herokuapp.com/notes
 
 ## License 
 None
